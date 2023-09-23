@@ -11,8 +11,8 @@ The main challange was how to keep state of the app. In OOP state can be some ob
 But pretending that objects don't exists, we need to deal only with functions. So here I see 3 ways how to do it.
 
 1. Using global variables. [Example of router](https://gist.github.com/aspergarus/0f632bc9050f8f851927b9f522a9a61e)
-2. Using static variables inside functions. [Example](https://gist.github.com/aspergarus/b26c5ce90138d689ca5641644ece7b94)
-3. Using functions as closure with closed state from the caller.
+2. Using static variables inside functions. [Example of container](https://gist.github.com/aspergarus/b26c5ce90138d689ca5641644ece7b94)
+3. Using functions as closure with closed state from the caller. [Example of router](https://gist.github.com/aspergarus/b2a56ece47d9409a47261a1bbaa0d47e)
 4. Using passing parameters everytime when we need some state.
 
 I rejected 1, as it's really easy to implement, but sometimes you may get into trouble since you have global scope, and every know that global is evil.
