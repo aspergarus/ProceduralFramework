@@ -10,7 +10,7 @@ it's named ProceduralFramework, as it doesn't use any classes, only functions. B
 The main challange was how to keep state of the app. In OOP state can be some object, which we pass to app object, and then we may ask whenever we want it.
 But pretending that objects don't exists, we need to deal only with functions. So here I see 3 ways how to do it.
 
-1. Using global variables.
+1. Using global variables. [Example of router](https://gist.github.com/aspergarus/0f632bc9050f8f851927b9f522a9a61e)
 2. Using static variables inside functions. [Example](https://gist.github.com/aspergarus/b26c5ce90138d689ca5641644ece7b94)
 3. Using functions as closure with closed state from the caller.
 4. Using passing parameters everytime when we need some state.
