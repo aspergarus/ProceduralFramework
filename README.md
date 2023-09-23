@@ -1,7 +1,13 @@
 # ProceduralFramework
 Tiny framework, or even library that support some basic operations like routing, template system and etc. Main aim here was to challenge myself to avoid any classes and OOP features in order to create minimal framework/lib that can help to build some app. For example blog.
 
-## Challange
+## Run
+
+> php -S 0.0.0.0:1234 index.php
+
+Open in browser localhost:1234
+
+## Challenge
 
 The main challange was how to keep state of the app. In OOP state can be some object, which we pass to app object, and then we may ask whenever we want it.
 But pretending that objects don't exists, we need to deal only with functions. So here I see 3 ways how to do it.
@@ -69,9 +75,7 @@ To make it beautiful, I use bootstrap. I also wanted to try bootstrap theme 386,
 
 ## TODO
 
-1. Validation
-
-Currently I almost skip validation of the input for creating/editing posts.
+1. Validation. Currently I almost skip validation of the input for creating/editing posts.
 
 2. Maybe implement some features like tag-cloud for the posts, or create not only posts, but some articles.
 
@@ -79,3 +83,4 @@ Currently I almost skip validation of the input for creating/editing posts.
 
 4. Use htmx or turbo to make it SPA.
 
+5. Implement docker to run php in container.
