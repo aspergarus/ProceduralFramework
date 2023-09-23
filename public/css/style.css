@@ -1,0 +1,15 @@
+
+.flash-info {
+    border: 1px solid green;
+    border-radius: 2px;
+    background: skyblue;
+    padding: 0.5rem;
+    color: white;
+}
+
+.flash-error {
+    border: 1px solid red;
+    border-radius: 2px;
+    background: palevioletred;
+    padding: 0.5rem;
+}
