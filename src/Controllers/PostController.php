@@ -9,6 +9,7 @@ use function Flash\setMessage;
 use function PostRepository\PostDelete;
 use function PostRepository\PostGet;
 use function PostRepository\PostUpdate;
+use function Validation\validate;
 
 function viewCreatePost(): Closure
 {
@@ -26,18 +27,22 @@ function createPost(): Closure
         }
 
         $parameters = request('parameters');
-        if (
-            empty($parameters['title']) || empty($parameters['text'])
-            || strlen($parameters['title']) > 255 || strlen($parameters['text']) > 1024
-        ) {
-            setMessage('Title or text are invalid', 'error');
+
+        $rules = ['title' => 'str|4..255', 'text' => 'str|12..1024'];
+        [$validatedParameters, $errors] = validate($parameters, $rules);
+
+        if (!empty($errors)) {
+            foreach ($errors as $name => $error) {
+                $errorMsg = sprintf("Field `%s` has error: %s", $name, $error);
+                setMessage($errorMsg, 'error');
+            }
             redirect('/post');
         }
 
         /* @var $posts array */
         $posts = get("posts", []);
 
-        $posts[] = ['title' => $parameters['title'], 'text' => $parameters['text']];
+        $posts[] = ['title' => $validatedParameters['title'], 'text' => $validatedParameters['text']];
         insert('posts', $posts);
 
         setMessage('Post is created');
@@ -79,14 +84,18 @@ function editPost(): Closure
             redirect("/post/$id/edit");
         }
 
-        if (empty($parameters['title']) || empty($parameters['text'])
-            || strlen($parameters['title']) > 255 || strlen($parameters['text']) > 1024)
-        {
-            setMessage('Title or text are invalid', 'error');
-            redirect("/post/$id/edit");
+        $rules = ['title' => 'str|4..255', 'text' => 'str|12..1024'];
+        [$validatedParameters, $errors] = validate($parameters, $rules);
+
+        if (!empty($errors)) {
+            foreach ($errors as $name => $error) {
+                $errorMsg = sprintf("Field `%s` has error: %s", $name, $error);
+                setMessage($errorMsg, 'error');
+            }
+            redirect('/post/$id/edit');
         }
 
-        PostUpdate($id, $parameters);
+        PostUpdate($id, $validatedParameters);
         setMessage('Post is updated');
         redirect("/post/$id");
     };

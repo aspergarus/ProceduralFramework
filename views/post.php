@@ -1,16 +1,14 @@
 <div class="container-fluid">
 
-    <?php if (!empty($flash)): ?>
-        <div class="well">
-            <div class="row-fluid">
-                <div class="span12">
-                    <div class="alert alert-block <?=$flash['style'] ?>">
-                        <?= $flash['message'] ?>
-                    </div>
+    <?php foreach ($flash as $message): ?>
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="alert alert-block <?= $message['style'] ?>">
+                    <?= $message['message'] ?>
                 </div>
             </div>
         </div>
-    <?php endif; ?>
+    <?php endforeach; ?>
 
     <div class="well">
         <div class="row-fluid">

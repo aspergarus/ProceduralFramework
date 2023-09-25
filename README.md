@@ -18,10 +18,10 @@ But pretending that objects don't exists, we need to deal only with functions. S
 4. Using passing parameters everytime when we need some state. [Example of router](https://gist.github.com/aspergarus/e1ea98febafaea25124455b0247173da)
 
 I rejected 1, as it's really easy to implement, but sometimes you may get into trouble since you have global scope, and every know that global is evil.
-Also I rejected 3, since it makes code really hard to support. 
+Also, I rejected 3, since it makes code really hard to support. 
 Variant #4 seems to me the best, but it requires additional work everytime when we need to use some 'global' config. So, it's possible to develop it, but require solid investigation and preparation. Because if you will not prepare properly, you will change your architecture too often, which requires a lot of changes.
 
-Therefore my choice is #2. Yeah, it's not so perfect, and actually it also exposes everything in global scope, you just need to use proper function. But at least it makes more safe naming of data, comparing to global scope.
+Therefore, my choice is #2. Yeah, it's not so perfect, and actually it also exposes everything in global scope, you just need to use proper function. But at least it makes more safe naming of data, comparing to global scope.
 
 ## Naming
 
@@ -45,37 +45,37 @@ It's named ProceduralFramework, as it doesn't use any classes, only functions. B
 
 1. Router.
 
-It support simple routes which matches as is, and also more complex, where you may define some variable path parameter. Examples of routes: `/user`, `/user/:id`, `/user/:id/edit`. 
+    It support simple routes which matches as is, and also more complex, where you may define some variable path parameter. Examples of routes: `/user`, `/user/:id`, `/user/:id/edit`. 
    
 2. View/template system.
 
-Firstly it could only render the whole page without reusing any html. It works well only if you have 1-2 pages. If you have more page, you need to modify all your pages everytime when you make any change for example in head section or in header/footer(like menu). Therefore I developed basic template system, where you may render some content inside some template. In my example I use only 1 template, but it can use any templates. As template system I use html and raw php.
+    Firstly it could only render the whole page without reusing any html. It works well only if you have 1-2 pages. If you have more page, you need to modify all your pages everytime when you make any change for example in head section or in header/footer(like menu). Therefore I developed basic template system, where you may render some content inside some template. In my example I use only 1 template, but it can use any templates. As template system I use html and raw php.
 
 3. DB.
 
-I didn't want to setup mysql or any other dedicated server DB. It should be simple, just to pass the challange. So I used DB based on local file. Firstly I was thinking about sqlite. But I would like to try something new(for me). So I chose DBA, which allow you to store data in local files like `key => value` pairs.
+    I didn't want to setup mysql or any other dedicated server DB. It should be simple, just to pass the challange. So I used DB based on local file. Firstly I was thinking about sqlite. But I would like to try something new(for me). So I chose DBA, which allow you to store data in local files like `key => value` pairs.
 
 4. Flash
 
-Just to show some messages after some actions. Like, after created some entity show message `You added entity bla-bla...`.
+    Just to show some messages after some actions. Like, after created some entity show message `You added entity bla-bla...`.
 
 5. Auth
 
-It's simple authentication, based on session and cookie. User is stored in DB like array with name and password hash.
+    It's simple authentication, based on session and cookie. User is stored in DB like array with name and password hash.
 
 6. CLI
 
-It's not actualy fully featured CLI, it's just a helper to create admin users in DB using CLI. Check `./bin/user.php`
+    It's not actually fully featured CLI, it's just a helper to create admin users in DB using CLI. Check `./bin/user.php`
 
 ## App features
 
-The challange was not only build some framework or lib, but also to use it. I tried to build simple blog system, where user may login/logout, view the posts. Admin user(actually any user that logged in), may also create/edit/delete posts.
+The challenge was not only build some framework or lib, but also to use it. I tried to build simple blog system, where user may login/logout, view the posts. Admin user(actually any user that logged in), may also create/edit/delete posts.
 
 To make it beautiful, I use bootstrap. I also wanted to try bootstrap theme 386, which looks like computer interface from 80-90s.
 
 ## TODO
 
-1. Validation. Currently I almost skip validation of the input for creating/editing posts.
+1. ~~Validation. Currently, I almost skip validation of the input for creating/editing posts.~~
 
 2. Maybe implement some features like tag-cloud for the posts, or create not only posts, but some articles.
 

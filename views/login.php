@@ -7,15 +7,15 @@
         </div>
     </div>
 
-    <?php if (!empty($flash)): ?>
+    <?php foreach ($flash as $message): ?>
         <div class="row-fluid">
             <div class="span12">
-                <div class="alert alert-block <?=$flash['style'] ?>">
-                    <?= $flash['message'] ?>
+                <div class="alert alert-block <?= $message['style'] ?>">
+                    <?= $message['message'] ?>
                 </div>
             </div>
         </div>
-    <?php endif; ?>
+    <?php endforeach; ?>
 
     <form action="<?= $currentUrl ?>" method="POST" class="form-horizontal">
         <div class="control-group">

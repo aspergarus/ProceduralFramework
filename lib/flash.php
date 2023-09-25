@@ -2,16 +2,16 @@
 
 namespace Flash;
 
-function getMessage() {
+function getMessages() {
     if (session_status() !== PHP_SESSION_ACTIVE) {
         session_start();
     }
 
-    $message = $_SESSION['flash'] ?? '';
+    $messages = $_SESSION['flash'] ?? [];
 
     unset($_SESSION['flash']);
 
-    return $message;
+    return $messages;
 }
 
 function setMessage($message, $style = 'success') {
@@ -19,7 +19,7 @@ function setMessage($message, $style = 'success') {
         session_start();
     }
 
-    $_SESSION['flash'] = [
+    $_SESSION['flash'][] = [
         'message' => $message,
         'style' => $style,
     ];

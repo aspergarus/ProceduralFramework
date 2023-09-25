@@ -21,7 +21,7 @@ function viewWithTemplate($name, $params = [], $template = 'template') {
     $uri = request('uri');
     $currentUrl = $uri;
     $menu = Menu\get();
-    $flash = Flash\getMessage();
+    $flash = Flash\getMessages();
     $user = Auth\getUser();
     $isAdmin = Role\isAdmin($user);
 

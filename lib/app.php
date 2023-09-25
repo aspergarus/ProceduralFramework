@@ -12,6 +12,7 @@ require_once "db.php";
 require_once "flash.php";
 require_once "auth.php";
 require_once "role.php";
+require_once "validation.php";
 // end parts of framework
 
 // Include parts of app code
