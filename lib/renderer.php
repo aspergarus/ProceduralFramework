@@ -37,3 +37,18 @@ function viewWithTemplate($name, $params = [], $template = 'template') {
     require_once $template;
     return ob_get_clean();
 }
+
+function json($params, $code = 200): void {
+    header('Content-Type: application/json', true, $code);
+
+    $jsonStr = json_encode($params);
+
+    if (!empty(json_last_error())) {
+        $jsonErrorMessage = json_last_error_msg();
+        http_response_code(422);
+        echo "{\"error\": $jsonErrorMessage}";
+        exit();
+    }
+
+    echo $jsonStr;
+}

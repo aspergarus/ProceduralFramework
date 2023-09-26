@@ -28,6 +28,8 @@ get("/profile", Controllers\BaseController\notImplementedYet());
 
 get("/404", Controllers\BaseController\notFound());
 
+get("/api", Controllers\BaseController\apiTestAction());
+
 // return needed only if you run it using build-in php server.
 // In this case if it does not found route, it will return source code which works perfect for output assets like
 // css, js, images, etc.

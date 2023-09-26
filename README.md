@@ -79,7 +79,7 @@ To make it beautiful, I use bootstrap. I also wanted to try bootstrap theme 386,
 
 2. Maybe implement some features like tag-cloud for the posts, or create not only posts, but some articles.
 
-3. Implement rendering in json, and try to create the same app as SPA
+3. ~~Implement rendering in json,~~ and try to create the same app as SPA
 
 4. Use htmx or turbo to make it SPA.
 

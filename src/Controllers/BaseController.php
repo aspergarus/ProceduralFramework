@@ -29,3 +29,30 @@ function homeAction(): Closure
         ]);
     };
 }
+
+function apiTestAction(): Closure
+{
+    return static function () {
+        $params = [
+            'test' => '111',
+            'items' => [
+                [
+                    'item' => [
+                        'name' => "midway",
+                        'price' => 123.0
+                    ],
+                    'id' => 123
+                ],
+                [
+                    'item' => [
+                        'name' => "lexington",
+                        'price' => 321.0
+                    ],
+                    'id' => 124
+                ],
+            ]
+        ];
+
+        json($params);
+    };
+}
