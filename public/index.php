@@ -1,5 +1,11 @@
 <?php
 
+# standard blog config
+# require_once "../src/appConfig.php";
+
+# htmx blog config
+require_once "../src/htmxConfig.php";
+
 require_once "../lib/app.php";
 
 get("/", Controllers\BaseController\homeAction());
@@ -29,6 +35,27 @@ get("/profile", Controllers\BaseController\notImplementedYet());
 get("/404", Controllers\BaseController\notFound());
 
 get("/api", Controllers\BaseController\apiTestAction());
+post("/api", Controllers\BaseController\apiTestAction());
+
+get("/htmx-test", Controllers\HtmxController\coreAction());
+get("/htmx-home", Controllers\HtmxController\homeAction());
+
+get("/htmx-post", Controllers\HtmxController\newPostPage());
+post("/htmx-post", Controllers\HtmxController\createPost());
+
+get("/htmx-post/:id", Controllers\HtmxController\viewPostAction());
+
+get("/htmx-post/:id/delete", Controllers\HtmxController\viewDeletePost(), 'admin');
+post("/htmx-post/:id/delete", Controllers\HtmxController\deletePost(), 'admin');
+
+get("/htmx-post/:id/edit", Controllers\HtmxController\editPostPage(), 'admin');
+post("/htmx-post/:id/edit", Controllers\HtmxController\editPostAction(), 'admin');
+
+
+get("/htmx-login", Controllers\HtmxController\loginForm());
+post("/htmx-login", Controllers\HtmxController\loginAction());
+
+
 
 // return needed only if you run it using build-in php server.
 // In this case if it does not found route, it will return source code which works perfect for output assets like

@@ -19,9 +19,9 @@ require_once "validation.php";
 require_once __DIR__ . "/../src/Controllers/PostController.php";
 require_once __DIR__ . "/../src/Controllers/UserController.php";
 require_once __DIR__ . "/../src/Controllers/BaseController.php";
+require_once __DIR__ . "/../src/Controllers/HtmxController.php";
 require_once __DIR__ . "/../src/Repository/PostRepository.php";
 require_once __DIR__ . "/../src/Repository/UserRepository.php";
-require_once __DIR__ . "/../src/appConfig.php";
 // end parts of app code
 
 container("LIB_DIR", __DIR__);

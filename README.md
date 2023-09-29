@@ -73,6 +73,8 @@ The challenge was not only build some framework or lib, but also to use it. I tr
 
 To make it beautiful, I use bootstrap. I also wanted to try bootstrap theme 386, which looks like computer interface from 80-90s.
 
+There is spa based on htmx. To check it, use /htmx-test url.
+
 ## TODO
 
 1. ~~Validation. Currently, I almost skip validation of the input for creating/editing posts.~~
@@ -81,6 +83,6 @@ To make it beautiful, I use bootstrap. I also wanted to try bootstrap theme 386,
 
 3. ~~Implement rendering in json,~~ and try to create the same app as SPA
 
-4. Use htmx or turbo to make it SPA.
+4. ~~Use htmx or turbo to make it SPA.~~
 
 5. Implement docker to run php in container.

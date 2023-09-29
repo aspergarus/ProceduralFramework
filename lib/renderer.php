@@ -5,6 +5,9 @@ use function \Utils\container;
 function view($name, $params = []) {
     $ext = '.php';
     $file = container("VIEW_DIR") . '/' . $name . $ext;
+    $flash = Flash\getMessages();
+    $user = Auth\getUser();
+    $isAdmin = Role\isAdmin($user);
 
     extract($params);
 
