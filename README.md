@@ -10,9 +10,22 @@ Open in browser localhost:1234
 ## Run in docker
 
 > cd deploy
+
 > make web
 
+If you don't have make, or it doesn't work properly:
+
+> docker compose up web
+
 Open in browser localhost:5000
+
+### Add user
+
+For adding new posts, you need to create a user. Run command:
+
+> make user
+
+Which will create a user `admin` with password `admin`
 
 ## Challenge
 
