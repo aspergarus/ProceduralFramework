@@ -48,5 +48,5 @@ function get($key, $default = null) {
         $res = unserialize($res);
     }
 
-    return $res ?? $default;
+    return $res ?: $default;
 }

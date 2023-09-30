@@ -7,6 +7,13 @@ Tiny framework, or even library that support some basic operations like routing,
 
 Open in browser localhost:1234
 
+## Run in docker
+
+> cd deploy
+> make web
+
+Open in browser localhost:5000
+
 ## Challenge
 
 The main challange was how to keep state of the app. In OOP state can be some object, which we pass to app object, and then we may ask whenever we want it.
@@ -85,4 +92,4 @@ There is spa based on htmx. To check it, use /htmx-test url.
 
 4. ~~Use htmx or turbo to make it SPA.~~
 
-5. Implement docker to run php in container.
+5. ~~Implement docker to run php in container.~~

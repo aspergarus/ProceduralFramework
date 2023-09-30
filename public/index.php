@@ -1,12 +1,12 @@
 <?php
 
 # standard blog config
-# require_once "../src/appConfig.php";
+require_once __DIR__ . "/../src/appConfig.php";
 
 # htmx blog config
-require_once "../src/htmxConfig.php";
+# require_once __DIR__ . "/../src/htmxConfig.php";
 
-require_once "../lib/app.php";
+require_once __DIR__ . "/../lib/app.php";
 
 get("/", Controllers\BaseController\homeAction());
 
